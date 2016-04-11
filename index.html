@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+      $(document).ready(function(){
+        var mapOptions = {
+          zoom: 16,
+          center: new google.maps.LatLng(26.571468,-80.1089777)
+        };
+        var positions = [
+          {
+            'title':'My Home',
+            'map': new google.maps.LatLng(26.571468,-80.1089777),
+            'link':'https://plus.google.com/u/0/103231085744764672157/posts',
+            'html':'<img src=https://lh3.googleusercontent.com/-5YKbP144uAk/VjQgrDj_IyI/AAAAAAAAIPA/vb9VyQDyD6QFr4lkyAfgRs6r2f4eGqxtw/w1636-h2180-no/IMG_2597.jpg/>'
+          },
+          {
+            'title':'My Old High School',
+            'map':new google.maps.LatLng(26.5725289,-80.1041891),
+            'link':'http://www.edline.net/pages/Santaluces_High_School'
+          },
+          {
+            'title':'Where I used to take the bus to work',
+            'map': new google.maps.LatLng(26.5708295,-80.1074099),
+            'link':'http://www.pbcgov.com/palmtran/'
+          }
+        ];
+        draw('map', mapOptions, positions);
+      });
+      // google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+        <style>
+      #map {
+        height:800px;
+        width:800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
